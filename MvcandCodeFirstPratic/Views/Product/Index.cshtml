@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MvcandCodeFirstPratic.Models.Products>
+@using MvcandCodeFirstPratic.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="table">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ürün Adı</th>
+                <th>Kategori Adı</th>
+                <th>Tedarikçi Şirket</th>
+                <th>Fiyat</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Products item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Categories.Name</td>
+                    <td>@item.Suppliers.CompanyName</td>
+                    <td>@item.UnitPrice</td>
+                    <td>@item.Status</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

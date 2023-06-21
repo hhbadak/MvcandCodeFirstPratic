@@ -1,0 +1,23 @@
+﻿@model MvcandCodeFirstPratic.Models.Products
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="form-control">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken();
+        <div class="row">
+            @Html.DisplayNameFor(Model => Model.Name) <br />
+            @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "input-group bg-light" } }) <br />
+            @Html.ValidationMessage("Name", "*", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(Model => Model.Name, "", new { @class = "alert alert-danger" })
+        </div>
+        <div class="row-cols-6">
+            @Html.DropDownList("ID", null, htmlAttributes: new { @class = "form-group" })
+        </div>
+        <div class="row-cols-6">
+            @Html.DropDownList("ID", null, htmlAttributes: new { @class = "form-group" })
+        </div>
+    }
+</div>
