@@ -1,0 +1,28 @@
+﻿@model IEnumerable<MVCAndCodeFirstPracticaWeb.Models.Categories>
+@using MVCAndCodeFirstPracticaWeb.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="container table">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Kategori Adı</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ foreach (Categories item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.Name</td>
+                    </tr>
+                }}
+        </tbody>
+    </table>
+    <div class="btn btn-dark bg-light">
+        <button type="submit" href="@Url.Action("","")">Ürün Ekleme İşlemi</button>
+    </div>
+</div>
