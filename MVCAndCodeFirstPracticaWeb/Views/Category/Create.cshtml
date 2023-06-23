@@ -1,0 +1,21 @@
+﻿@model MVCAndCodeFirstPracticaWeb.Models.Categories
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="form-control">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken();
+        <div class="container">
+            <div class="row w-25">
+                @Html.DisplayNameFor(Model => Model.Name)
+                @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "input-group bg-light" } })
+                @Html.ValidationMessageFor(Model => Model.Name, "", new { @class = "text-danger" })
+            </div>
+            <div class="row mt-2 w-25">
+                <button type="submit" class="btn btn-dark">Gönder</button>
+            </div>
+        </div>
+    }
+</div>

@@ -16,5 +16,22 @@ namespace MVCAndCodeFirstPracticaWeb.Controllers
             List<Suppliers> supplierList = db.Suppliers.ToList();
             return View(supplierList);
         }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Suppliers model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.status = true;
+                db.Suppliers.Add(model);
+                db.SaveChanges();
+                return RedirectToAction("Create");
+            }
+            return View(model);
+        }
     }
 }

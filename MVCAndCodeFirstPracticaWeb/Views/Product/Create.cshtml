@@ -8,24 +8,24 @@
     {
         @Html.AntiForgeryToken();
         <div class="container">
-            <div class="row col-6">
+            <div class="row w-25">
                 @Html.DisplayNameFor(Model => Model.Name)
                 @Html.EditorFor(Model => Model.Name, new { htmlAttributes = new { @class = "input-group bg-light" } })
                 @Html.ValidationMessageFor(Model => Model.Name, "", new { @class = "text-danger" })
             </div>
-            <div class="row col-6 mt-3">
+            <div class="row mt-3 w-25">
                 @Html.DropDownList("CategoryID", null, htmlAttributes: new { @class = "form-group" })
             </div>
-            <div class="row col-6 mt-3">
+            <div class="row mt-3 w-25">
                 @Html.DropDownList("SupplierID", null, htmlAttributes: new { @class = "form-group" })
             </div>
-            <div class="row col-6 mt-3">
+            <div class="row mt-3 w-25">
                 @Html.DisplayNameFor(Model => Model.UnitPrice) <br />
                 @Html.EditorFor(Model => Model.UnitPrice, new { htmlAttributes = new { @class = "input-group bg-light" } })
                 @Html.ValidationMessageFor(Model => Model.UnitPrice, "", new { @class = "text-danger" })
             </div>
-            <div class="row col-6 mt-3">
-                <button class="btn btn-light" type="submit">Gönder</button>
+            <div class="row mt-3 w-25">
+                <button class="btn btn-dark" type="submit">Gönder</button>
             </div>
         </div>
     }
